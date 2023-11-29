@@ -1,10 +1,8 @@
-function Header  () {
-    return (
-        <>
-        <div>
-            hasdadas
-        </div>
-        </>
-    )
+function Header() {
+  return (
+    <>
+      <div>hasdadas</div>
+    </>
+  );
 }
 export default Header;

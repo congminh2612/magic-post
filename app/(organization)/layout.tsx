@@ -1,35 +1,31 @@
 import { ClerkProvider } from "@clerk/nextjs";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "../globals.css"
+import "../globals.css";
+import { Header } from "@/components/Shared/Header";
+import { Sidebar } from "@/components/Shared/Sidebar";
 
-
-
-export const metadata : Metadata = {
-    title: 'Magic Post',
-    description: 'A Next.js 13 Meta Threads Application',
-}
+export const metadata: Metadata = {
+  title: "Magic Post",
+  description: "A Next.js 13 Meta Threads Application",
+};
 
 interface Props {
-    children : React.ReactNode;
+  children: React.ReactNode;
 }
 
-const inter = Inter({subsets:["latin"]})
+const inter = Inter({ subsets: ["latin"] });
 
-
-function RootLayout({children}: Props) {
-    return (
-        <>
-        <ClerkProvider>
-            <html lang="en">
-                <body className={`${inter.className} `}>
-                    {children}
-                </body>
-            </html>
-        </ClerkProvider>
-        </>
-    )
+function RootLayout({ children }: Props) {
+  return (
+    <>
+      <ClerkProvider>
+        <html lang="en">
+          <body className={`${inter.className} `}>{children}</body>
+        </html>
+      </ClerkProvider>
+    </>
+  );
 }
-
 
 export default RootLayout;
